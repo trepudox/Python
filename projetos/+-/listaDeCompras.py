@@ -4,9 +4,9 @@ while True:
     try:
         produto = input('Nome do produto: ')
         quantia = int(input('Quantidade: '))
-        preco = float(input('PreÁo unit·rio: '))
+        preco = float(input('Pre√ßo unit√°rio: '))
     except ValueError:
-        print('\nDigite dados v·lidos por favor.\n')
+        print('\nDigite dados v√°lidos por favor.\n')
         continue
 
     listacompras.append([produto, quantia, preco])
@@ -20,7 +20,7 @@ while True:
         break
 
 for x in listacompras:
-    print("Produto:          {}\nQuantidade:       {}\nPreÁo unit·rio:   {:.2f}\nPreÁo total:      {:.2f}".format(x[0], x[1], x[2], x[1]*x[2]))
+    print("Produto:          {}\nQuantidade:       {}\nPre√ßo unit√°rio:   {:.2f}\nPre√ßo total:      {:.2f}".format(x[0], x[1], x[2], x[1]*x[2]))
     print()
 
 print('Fim do programa.')
