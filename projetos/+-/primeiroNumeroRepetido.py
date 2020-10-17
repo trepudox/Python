@@ -13,6 +13,7 @@ lista_de_listas_de_inteiros = [
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
 
+
 # o primeiro numero que se repetir dentro das listas será retornado, caso nenhum se repita, retornará None
 
 
@@ -33,7 +34,7 @@ def funcao_repetido(lista_arg):
     return lista_arg[lista_bau.index(min(lista_bau))]
 
 
-print(funcao_repetido([1,2,3,3,2,1]))
+print(funcao_repetido([1, 2, 3, 3, 2, 1]))
 
 for numero, listas in enumerate(lista_de_listas_de_inteiros):
     print(f'Lista {numero}:', funcao_repetido(listas))
