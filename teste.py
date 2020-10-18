@@ -7,10 +7,17 @@ def quadrado(nums):
         time.sleep(0.5)
 
 
-lista = []
-for elemento in quadrado(list(range(10))):
-    print(elemento)
-    lista.append(elemento)
-    print(lista)
+for i in quadrado(list(range(10))):
+    print(i)
 
-# qualquenjskofsdiosdop
+
+
+def quadrado_lista(nums):
+    res = []
+    for x in nums:
+        res.append(x*x)
+
+    return res
+
+
+print(quadrado_lista(list(range(10))))
