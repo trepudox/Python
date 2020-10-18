@@ -1,5 +1,14 @@
-lista = [i + 1 for i in range(10)]
+import time
 
-dicionario = {x: y for x in lista for y in [0, input(f'Digite o valor da chave {x}:')]}
 
-print(dicionario)
+def quadrado(nums):
+    for x in nums:
+        yield x*x
+        time.sleep(0.5)
+
+
+lista = []
+for elemento in quadrado(list(range(10))):
+    print(elemento)
+    lista.append(elemento)
+    print(lista)

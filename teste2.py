@@ -1,3 +1,16 @@
-a = [0,1,2,3,None]
+import time
 
-print(min(a))
+
+def quadrado(nums):
+    res = []
+    for x in nums:
+        res.append(x*x)
+        time.sleep(0.5)
+
+    return res
+
+lista = []
+for elemento in quadrado(list(range(10))):
+    print(elemento)
+    lista.append(elemento)
+    print(lista)
