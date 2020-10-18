@@ -9,7 +9,7 @@ while True:
         print('\nDigite dados válidos por favor.\n')
         continue
 
-    listacompras.append([produto, quantia, preco])
+    listacompras.append((produto, quantia, preco))
 
     condic = input('\nDigite "S" para continuar e "P" para parar.\n')
 
