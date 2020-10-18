@@ -12,3 +12,5 @@ for elemento in quadrado(list(range(10))):
     print(elemento)
     lista.append(elemento)
     print(lista)
+
+# qualquenjskofsdiosdop
