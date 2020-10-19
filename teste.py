@@ -1,7 +1,8 @@
-def quadrado(lista):
-    for x in lista:
-        yield x*x
+def exemplo(listaarg):
+    for i in listaarg:
+        yield i * i
 
 
-for valor in quadrado(list(range(10))):
+var = exemplo(list(range(10)))
+for valor in var:
     print(valor)
