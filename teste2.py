@@ -9,6 +9,7 @@ def quadrado(nums):
 
     return res
 
+
 lista = []
 for elemento in quadrado(list(range(10))):
     print(elemento)
