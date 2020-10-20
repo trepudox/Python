@@ -1,8 +1,11 @@
-def exemplo(listaarg):
-    for i in listaarg:
-        yield i * i
+def e_primo(num):
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    else:
+        return True
 
 
-var = exemplo(list(range(10)))
-for valor in var:
-    print(valor)
+entrada = int(input('Digite um número: '))
+condic = 'é' if e_primo(entrada) else 'não é'
+print('O número {} {} primo.'.format(entrada, condic))
