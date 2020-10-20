@@ -1,9 +1,5 @@
 import time
 
 while True:
-    if time.localtime().tm_sec % 2 == 0:
-        print(f'segundo {time.localtime().tm_sec} par')
-        time.sleep(1)
-    else:
-        print(f'segundo {time.localtime().tm_sec} impar')
-        time.sleep(1)
+    print(f'hora {time.localtime().tm_hour} minuto {time.localtime().tm_min} segundo {time.localtime().tm_sec}')
+    time.sleep(1)

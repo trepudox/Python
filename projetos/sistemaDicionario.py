@@ -1,16 +1,16 @@
-dicionario = {}
-
-arquivo = open('sistemaDicionariotxt.txt', 'w+')
-
-print('Comandos do programa:\n"V" para ver uma chave espec�fica\n"A" para adicionar uma chave\n"E" para excluir uma '
-      'chave\n"I" para ver todos os valores do dicionario\n')
-
+dic = {'Arroz': 10.0, 'Alface': 20.0, 'Feijão': 999.0}
+condicao = ''
 while True:
-    acao = str(input('Digite qual comando quer executar, "!comandos" para ver os comandos ou "!sair" para sair.')).casefold()
+    condicao = input('Digite o que quer fazer, "V" para ver preços, "A" para adicionar produtos, e "!sair" para sair: ')
+    if condicao.casefold() == '!sair':
+        break
+    elif condicao.casefold() == 'v':
+        entrada = input('Digite o produto desejado para saber o preço: ').title()
+        print(f'{entrada} custa R$', dic.get(entrada), '\n')
+    elif condicao.casefold() == 'a':
+        produtoadd = str(input('Digite o nome do produto: ')).title()
+        dic[produtoadd] = float(input(f'Digite o valor de "{produtoadd}": '))
+        print(f'Agora o dicionário ficou assim: ')
+        print(dic, '\n')
 
-    if len(acao) != 1 and 'v' != acao and acao != 'a' and acao !=:
-        print('Digite apenas comandos existentes para o funcionamento correto do programa.')
-
-    if 1:
-        dicionario[input('Digite o nome da chave: ')] = input('Digite o valor da chave: ')
-
+print('Fim do programa.')

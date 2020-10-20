@@ -1,7 +1,2 @@
-import time
+dic = {'Arroz': 10, 'Alface': 20, 'Feijão': 999}
 
-data = time.localtime()
-
-lista = [str(data.tm_mday), str(data.tm_mon), str(data.tm_year)]
-resultado = '/'.join(lista)
-print(resultado)
