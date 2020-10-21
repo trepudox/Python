@@ -4,8 +4,8 @@ while True:
     if not condicao == '':
         print()
     condicao = input('Digite o que quer fazer, "V" para ver o preço de algum produto específico, "A" para adicionar'
-                     ' produtos, "L" para listar todos os produtos, \n"D" para deletar algum produto, e "!sair" para '
-                     'sair: ')
+                     'ou alterar produtos, "L" para listar todos os produtos, \n"D" para deletar algum produto, e '
+                     '"!sair" para sair: ')
 
     if condicao.casefold() == '!sair':
         break
@@ -22,7 +22,7 @@ while True:
 
     elif condicao.casefold() == 'd':
         try:
-            dic.pop(input('Digite o item que deseja deletar: '))
+            dic.pop(input('Digite o item que deseja deletar: ').title())
         except KeyError:
             print('Este produto não estava incluso na lista, impossível apagá-lo.')
 
