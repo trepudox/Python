@@ -1,28 +1,6 @@
-import random
+lista1 = [1, 2, 3, 4, 5, 6]
+lista2 = [0, 5, 1, 4]
 
+resultado = [a+b for a, b in zip(lista1, lista2)]
 
-def e_primo(num):
-    for i in range(2, num):
-        if num % i == 0:
-            return False
-    else:
-        return True
-
-
-try:
-    entrada = int(input('Digite o tamanho desejado do número: '))
-    if entrada < 1:
-        raise ValueError('Valor não pode ser menor ou igual a 0')
-finally:
-    pass
-
-while True:
-    numero = str(random.randint(1, 9))
-    for x in range(entrada - 1):
-        numero += str(random.randint(0, 9))
-
-    numero = int(numero)
-
-    if e_primo(numero):
-        print(f'O número {numero} é primo')
-        break
+print(resultado)

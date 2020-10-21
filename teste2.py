@@ -1,5 +1,9 @@
-dic = {'Arroz': 10, 'Alface': 20, 'Feijão': 999}
+lista1 = [1, 2, 3, 4, 5, 6]
+lista2 = [0, 5, 1, 4]
 
-print(dic)
-dic.pop('Feijã')
-print(dic)
+resultado = []
+
+for index, i in enumerate(lista2):
+    resultado.append(i + lista1[index])
+
+print(resultado)
