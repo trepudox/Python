@@ -24,5 +24,5 @@ while True:
     numero = int(numero)
 
     if e_primo(numero):
-        print(f'O número {numero} é primo')
+        print(f'O número {numero} é primo.')
         break
