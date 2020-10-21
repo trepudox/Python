@@ -10,3 +10,4 @@ entrada = int(input('Digite um número: '))
 condic = 'é' if e_primo(entrada) else 'não é'
 print('O número {} {} primo.'.format(entrada, condic))
 
+# 23489237489 é primo
