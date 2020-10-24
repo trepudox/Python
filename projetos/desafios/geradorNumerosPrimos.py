@@ -9,12 +9,9 @@ def e_primo(num):
         return True
 
 
-try:
-    entrada = int(input('Digite o tamanho desejado do número: '))
-    if entrada < 1:
-        raise ValueError('Valor não pode ser menor ou igual a 0')
-finally:
-    pass
+entrada = int(input('Digite o tamanho desejado do número: '))
+if entrada < 1:
+    raise ValueError('Valor não pode ser menor ou igual a 0')
 
 while True:
     numero = str(random.randint(1, 9))
