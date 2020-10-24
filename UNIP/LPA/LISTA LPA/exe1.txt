@@ -1,0 +1,13 @@
+programa exercicio1
+var
+    x, y, soma, dobro: inteiros
+inicio
+    leia (x, y)
+    soma <- x + y
+    dobro <- soma * 2
+    se (dobro >= 28) então
+        escreva (soma**2)
+    senão
+        escreva ((x**2) + (y**2))
+    fim_se
+fim

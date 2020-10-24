@@ -1,0 +1,12 @@
+programa exercicio2
+var
+    x, y, soma: inteiros
+inicio
+    leia (x, y)
+    soma <- x + y
+    se (soma < 12) então
+        x <- y
+    senão
+        y <- x
+    fim_se
+fim
