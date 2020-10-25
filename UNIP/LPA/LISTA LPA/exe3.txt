@@ -5,8 +5,8 @@ inicio
     leia (x, y)
     triplo <- 3 * (x * y)
     se (triplo > 25) então
-        escreva ((x + y) ** 3)
+        escreva ((x + y) ^ 3)
     senão
-        escreva ((x**3) + (y**3))
+        escreva ((x^3) + (y^3))
     fim_se
 fim

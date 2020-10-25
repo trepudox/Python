@@ -1,0 +1,19 @@
+programa exercicio6
+var
+    np1, np2, ms, mf, exame: reais
+inicio
+    leia(np1, np2)
+    ms <- (2 * np1 + 3 * np2) / 5
+    se (ms >= 7) então
+        escreva("Aluno aprovado")
+        mf <- ms
+    senão
+        leia(exame)
+        mf <- (ms + exame) / 2
+        se (mf >= 5) então
+            escreva("Aluno aprovado após o exame")
+        senão
+            escreva("Aluno reprovado")
+        fim_se
+    fim_se
+fim

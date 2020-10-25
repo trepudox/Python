@@ -1,0 +1,16 @@
+programa exercicio5
+var
+    a, b, c: inteiros
+    delta, raiz1, raiz2: reais
+inicio
+    leia (a, b, c)
+    delta <- (b^2 - 4*a*c)
+    se (delta < 0) então
+        escreva("Não há raízes para a equação.")
+    senão
+        raiz1 <- (-b + sqrt(delta)) / 2 * a
+        raiz2 <- (-b - sqrt(delta)) / 2 * a
+        escreva(raiz1)
+        escreva(raiz2)
+    fim_se
+fim

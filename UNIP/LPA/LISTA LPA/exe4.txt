@@ -1,0 +1,12 @@
+programa exercicio4
+var
+    x, resultado: inteiro
+inicio
+    leia (x)
+    resultado <- x MOD 2
+    se (resultado = 0) então
+        escreva("O número é par")
+    senão
+        escreva("O número é ímpar")
+    fim_se
+fim
