@@ -1,3 +1,6 @@
 a = 'aaaaaaaaaaaaaa:bbbb'
 
-print(a[0:':'])
+
+
+if __name__ == '__main__':
+    print(__name__)
