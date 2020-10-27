@@ -1,7 +1,7 @@
 from random import randint
 
 
-def caixa(entrada='texto'):
+def caps_aleatorio(entrada='texto'):
     if len(entrada) == 0:
         raise ValueError('Texto inválido.')
 
@@ -10,13 +10,14 @@ def caixa(entrada='texto'):
 
     for indice, letra in enumerate(entrada[2:]):
         if saida[indice].islower() and saida[indice + 1].islower():
-            saida += entrada[indice+2].upper()
+            saida += entrada[indice + 2].upper()
         elif saida[indice].isupper() and saida[indice + 1].isupper():
-            saida += entrada[indice+2].lower()
+            saida += entrada[indice + 2].lower()
         else:
-            saida += entrada[indice+2].upper() if randint(0, 1) == 1 else entrada[indice+2].lower()
+            saida += entrada[indice + 2].upper() if randint(0, 1) == 1 else entrada[indice + 2].lower()
 
     return saida
 
 
-print(caixa(input('Digite seu texto: ')))
+if __name__ == '__main__':
+    print(caixa(input('Digite seu texto: ')))
