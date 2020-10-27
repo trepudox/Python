@@ -1,20 +1,3 @@
-Linha 0: 0
-Linha 1: 1
-Linha 2: 4
-Linha 3: 9
-Linha 4: 16
-Linha 5: 25
-Linha 6: 36
-Linha 7: 49
-Linha 8: 64
-Linha 9: 81
-Linha 10: 100
-Linha 11: 121
-Linha 12: 144
-Linha 13: 169
-Linha 14: 196
-Linha 15: 225
-Linha 16: 256
-Linha 17: 289
-Linha 18: 324
-Linha 19: 361
+Media Aluno 1: 7.5
+Media Aluno 2: 5.5
+Media Aluno 3: 8.5
