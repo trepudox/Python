@@ -1,10 +1,6 @@
-lista_tarefas = {
-    'tarefa1': 'aaaa',
-    'tarefa2': 'sda',
-    'tarefa3': 'aafdsaa',
-    'tarefa4': 'aasde',
-                 }
+entrada_usuario = input('Digite o CNPJ sem pontos e traços: ')
+cnpj_original = entrada_usuario
+cnpj_calculo = cnpj_original[:-2]
 
-print(lista_tarefas)
-lista_tarefas.pop('tarefa1')
-print(lista_tarefas)
+print(cnpj_original)
+print(cnpj_calculo)
