@@ -27,7 +27,8 @@ def cnpj_loop(cnpj, loop2=False):
 
 if __name__ == '__main__':
     while True:
-        entrada_usuario = input('Digite o CNPJ sem pontos, traços e barras: ')  # 04252011000110  |||  04.252.011/0001-10
+        entrada_usuario = input(
+            'Digite o CNPJ sem pontos, traços e barras: ')  # 04252011000110  |||  04.252.011/0001-10
         if len(entrada_usuario) != 14 or not entrada_usuario.isnumeric():
             print('\nO CNPJ deve conter 14 dígitos numéricos, sem usar traços, pontos, barras e letras.\n')
         else:
@@ -42,6 +43,8 @@ if __name__ == '__main__':
     cnpj_valido = cnpj_calculo == cnpj_original
 
     if cnpj_valido:
-        print(f'O CNPJ {cnpj_original[:2]}.{cnpj_original[2:5]}.{cnpj_original[5:8]}/{cnpj_original[8:12]}-{cnpj_original[12:]} é válido.')
+        print(
+            f'O CNPJ {cnpj_original[:2]}.{cnpj_original[2:5]}.{cnpj_original[5:8]}/{cnpj_original[8:12]}-{cnpj_original[12:]} é válido.')
     else:
-        print(f'O CNPJ {cnpj_original[:2]}.{cnpj_original[2:5]}.{cnpj_original[5:8]}/{cnpj_original[8:12]}-{cnpj_original[12:]} é inválido.')
+        print(
+            f'O CNPJ {cnpj_original[:2]}.{cnpj_original[2:5]}.{cnpj_original[5:8]}/{cnpj_original[8:12]}-{cnpj_original[12:]} é inválido.')

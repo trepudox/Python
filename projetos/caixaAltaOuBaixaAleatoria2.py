@@ -20,4 +20,4 @@ def caps_aleatorio(entrada='texto'):
 
 
 if __name__ == '__main__':
-    print(caixa(input('Digite seu texto: ')))
+    print(caps_aleatorio(input('Digite seu texto: ')))

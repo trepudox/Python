@@ -1,4 +1,4 @@
-from codigosPython.projetos.validadorDeCNPJ import cnpj_loop
+from pythonProject.codigosPython.projetos.validadorDeCNPJ import cnpj_loop
 from random import randint
 
 
