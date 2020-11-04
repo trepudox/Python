@@ -1,53 +1,74 @@
 from math import sqrt
 
-erro = False  # variável erro para identificar algum erro durante a execução da descriptografia
+# variável erro para identificar algum possível erro durante a execução da descriptografia
+erro = False
 
 
 def decodifica(criptografada, num):
     global erro
     descripto = ''
-    for char in criptografada:  # iteração nos caracteres da mensagem criptografada
+    # iteração nos caracteres da mensagem criptografada
+    for char in criptografada:
+        # tenta descriptografar cada caracter da mensagem
         try:
-            descripto += chr(ord(char) - num)  # tenta descriptografar cada caracter da mensagem
-        except ValueError:  # se algum dos caracteres não estiver criptografado, cairá neste bloco except
-            print('Há elementos não criptografados na mensagem. Impossível descriptografar.')
+            descripto += chr(ord(char) - num)
+        # se algum dos caracteres não estiver criptografado pelo programa cripto, cairá neste bloco except
+        except ValueError:
+            print('\nHá elementos não criptografados na mensagem. Impossível descriptografar.')
+            # retorna None, erro agora se torna True e sai da função, pois ocorreu um erro erro
             erro = True
-            return  # não retorna nada, apenas sai da função, pois houve erro
-    return descripto  # retorna a mensagem descriptografada
+            return
+    # retorna a mensagem descriptografada
+    return descripto
 
 
-print("Programa de descriptografia, insira corretamente a chave e depois uma mensagem, que foi criptografada pelo "
-      "programa 'cripto', para que ela seja descriptografada.", end='\n\n')
+print("\nPrograma de descriptografia, insira corretamente a chave e depois o nome do arquivo texto, que tenha uma "
+      "mensagem criptografada pelo programa cripto. \n(O arquivo texto precisa estar no mesmo diretório deste programa "
+      "para que tudo funcione corretamente)", end='\n\n')
 while True:
-    try:  # bloco de try e except caso o usuario digite uma string
+    # bloco de try e except caso o usuario digite uma string
+    try:
         a = input('Digite a chave A: ')  # 0
         b = input('Digite a chave B: ')  # 9
         c = input('Digite a chave C: ')  # 0
-        print()
         a, b, c = int(a), int(b), int(c)
-    except ValueError:  # caso uma das chaves seja uma string o programa irá parar imediatamente
-        print('Chave incorreta.')
+    # caso uma das chaves seja uma string o programa irá parar imediatamente
+    except ValueError:
+        print('\nChave incorreta.')
         break
 
-    delta = (-b) ** 2 - 4 * a * c  # verificação da chave
-    chave_correta = delta == 81  # verificação da chave
+    # verificação da chave
+    delta = (-b) ** 2 - 4 * a * c
+    chave_correta = delta == 81
 
-    if chave_correta:  # verificação da chave
-        entrada = input('Digite a palavra ou frase a ser descriptografada: ')
-        raiz = int(sqrt(delta))
-        mensagem_descriptografada = decodifica(entrada, (int(raiz) - 5) * 100)
-
-        if erro:  # erro capturado na função decodifica
+    if chave_correta:
+        # entrada do usuário
+        entrada_arquivo = input('\nDigite o nome do arquivo a ser descriptografado: ').lower()
+        try:
+            # abre o arquivo em UTF-8 e modo de leitura. Caso o arquivo não exista, o programa para e avisa o usuário
+            with open(f'{entrada_arquivo}.txt', 'r', encoding='UTF-8') as arquivo_txt:
+                leitura = arquivo_txt.read()
+        except FileNotFoundError:
+            print('\nO arquivo de texto não existe!')
             break
-        print()
-        print('A mensagem descriptografada é a seguinte:\n' + mensagem_descriptografada)
-        with open('decripto.txt', 'w', encoding='UTF-8') as arquivo_txt:
-            arquivo_txt.write(f'A última mensagem descriptografada foi:\n{mensagem_descriptografada}')
+
+        # calcula a raíz de delta
+        raiz = int(sqrt(delta))
+
+        # função para descriptografar a mensagem
+        mensagem_descriptografada = decodifica(leitura, (int(raiz) - 5) * 100)
+
+        # bloco if para verificar se houve erro durante a execução da função
+        if erro:
+            break
+
+        # printa na tela a mensagem descriptografada
+        print('\nA mensagem descriptografada é a seguinte:\n' + mensagem_descriptografada)
         break
 
+    # caso as chaves A, B e C sejam números inteiros, porém delta não é igual a 81
     else:
         print('Chave incorreta.')
         break
 
-print()
-print('Fim do programa.')
+print('\nFim do programa.')
