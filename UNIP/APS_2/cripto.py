@@ -32,10 +32,10 @@ while True:
         entrada = input('Agora, digite a mensagem a ser criptografada: ')
         # verificação de quantos caracteres há na mensagem
         if len(entrada) > 128:
-            print('Mensagem não pode conter mais que 128 caracteres.')
+            print('\nMensagem não pode conter mais que 128 caracteres.')
             break
 
-        # conta da raíz de delta
+        # conta da raíz de delta, o número é usado para alterar os caracteres
         raiz = sqrt(delta)
         # função para criptografar a mensagem
         mensagem_criptografada = codifica(entrada, (int(raiz - 5)) * 100)
@@ -48,7 +48,7 @@ while True:
         break
     # caso as chaves A, B e C sejam números inteiros, porém delta não é igual a 81
     else:
-        print('Chave incorreta.')
+        print('\nChave incorreta.')
         break
 
 print('\nFim do programa.')

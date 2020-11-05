@@ -52,7 +52,7 @@ while True:
             print('\nO arquivo de texto não existe!')
             break
 
-        # calcula a raíz de delta
+        # calcula a raíz de delta, o número é usado para reverter a alteração dos caracteres
         raiz = int(sqrt(delta))
 
         # função para descriptografar a mensagem
@@ -68,7 +68,7 @@ while True:
 
     # caso as chaves A, B e C sejam números inteiros, porém delta não é igual a 81
     else:
-        print('Chave incorreta.')
+        print('\nChave incorreta.')
         break
 
 print('\nFim do programa.')
