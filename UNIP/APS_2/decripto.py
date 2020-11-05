@@ -26,7 +26,7 @@ print("\nPrograma de descriptografia, insira corretamente a chave e depois o nom
       "mensagem criptografada pelo programa cripto. \n(O arquivo texto precisa estar no mesmo diretório deste programa "
       "para que tudo funcione corretamente)", end='\n\n')
 while True:
-    # bloco de try e except caso o usuario digite uma string
+    # bloco de try e except caso o usuario digite uma string nas chaves
     try:
         a = input('Digite a chave A: ')  # 0
         b = input('Digite a chave B: ')  # 9

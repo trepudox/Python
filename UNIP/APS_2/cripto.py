@@ -13,7 +13,7 @@ print('\nPrograma de criptografia, insira corretamente a chave, o nome do arquiv
       'depois uma mensagem, para que ela seja criptografada. \nA mensagem não pode conter mais que 128 caracteres',
       end='\n\n')
 while True:
-    # bloco de try e except caso o usuario digite uma string
+    # bloco de try e except caso o usuario digite uma string nas chaves
     try:
         a = input('Digite a chave A: ')  # 0
         b = input('Digite a chave B: ')  # 9
@@ -52,3 +52,7 @@ while True:
         break
 
 print('\nFim do programa.')
+
+
+# !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ // 32 ao 125
+# áâãäåæçèéêëìíîïðñòóôõö÷øùúû // 225 ao 252
