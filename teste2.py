@@ -1,14 +1,14 @@
-def dec1(func):
-    def a(texto):
-        print('-' * (len(texto) + 2))
-        func(' ' + texto + ' ')
-        print('-' * (len(texto) + 2))
-    return a
+class Gato:
+    def __init__(self, patas, cor, tamanho, nome='Gato'):
+        self.patas = patas
+        self.cor = cor
+        self.tamanho = tamanho
+        self.nome = nome
+
+    def miar(self):
+        print(self.nome + ' miou. Miau!')
 
 
-@dec1
-def comandos(*args):
-    return 'aaa'
+jaspion = Gato(4, 'preto', 'pequeno', 'Jaspion')
 
-
-comandos()
+jaspion.miar()

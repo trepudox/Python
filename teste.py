@@ -9,7 +9,7 @@ class Cachorro:
         print(f'{self.nome} latiu.')
 
 
-tarzan = Cachorro('preto', 'macho', 'forte', nome='Tarzan')
+tarzan = Cachorro('preto', 'macho', 'forte', 'Tarzan')
 mel = Cachorro('caramelo', 'fêmea', 'fino')
 
 tarzan.latir()
