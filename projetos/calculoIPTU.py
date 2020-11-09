@@ -53,11 +53,11 @@ if __name__ == '__main__':
         if entrada_tipo == 1:
             entrada = int(input('Digite aqui o valor do seu imóvel: '))
             if iptu(entrada) is not None:
-                print('\nO valor do seu IPTU é de: ' + str(iptu(entrada)), end='\n\n')
+                print('\nO valor do seu IPTU é de: R$ ' + str(iptu(entrada)), end='\n\n')
         elif entrada_tipo == 2:
             entrada = int(input('Digite aqui o valor do seu imóvel: '))
             if iptu(entrada, residencial=False) is not None:
-                print('O valor do seu IPTU é de: ' + str(iptu(entrada, residencial=False)), end='\n\n')
+                print('O valor do seu IPTU é de: R$ ' + str(iptu(entrada, residencial=False)), end='\n\n')
     except ValueError:
         print('\nDigite apenas "1" ou "2" para as opções de imóvel.\n')
     except TypeError:
