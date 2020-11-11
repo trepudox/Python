@@ -11,4 +11,3 @@ p1 = Pessoa('Marco', 18)
 p2 = Pessoa('Albert', 20)
 
 p1.chamar(p2)
-
