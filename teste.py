@@ -1,16 +1,12 @@
-class Cachorro:
-    def __init__(self, cor, sexo, porte_fisico, nome='Cachorro'):
-        self.nome = nome
-        self.cor = cor
-        self.sexo = sexo
-        self.porte_fisico = porte_fisico
+import time
 
-    def latir(self):
-        print(f'{self.nome} latiu.')
+sem_erro = True
 
-
-tarzan = Cachorro('preto', 'macho', 'forte', 'Tarzan')
-mel = Cachorro('caramelo', 'fêmea', 'fino')
-
-tarzan.latir()
-mel.latir()
+while sem_erro:
+    for x in range(10):
+        print('#' * x)
+        time.sleep(0.75)
+    else:
+        sem_erro = False
+else:
+    print('a')
