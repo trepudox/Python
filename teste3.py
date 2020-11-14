@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from math import sqrt
 
 erro = False
@@ -58,3 +59,18 @@ while True:
         break
 
 print('\nFim do programa.')
+=======
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def chamar(self, pessoa):
+        print(self.nome + ' chamou ' + pessoa.nome)
+
+
+p1 = Pessoa('Marco', 18)
+p2 = Pessoa('Albert', 20)
+
+p1.chamar(p2)
+>>>>>>> 1e9c93836a5cfb4c92e2df560ea4f1b6b4149b64
