@@ -1,12 +1,25 @@
-import time
+class Pessoa:
+    def __init__(self, nome, idade, altura, peso):
+        self.nome = nome
+        self.idade = idade
+        self.altura = altura
+        self.peso = peso
 
-sem_erro = True
+    bracos = 2
+    pernas = 2
+    maos = 2
 
-while sem_erro:
-    for x in range(10):
-        print('#' * x)
-        time.sleep(0.75)
-    else:
-        sem_erro = False
-else:
-    print('a')
+    def quantos(self):
+        if self.bracos != 2:
+            print('oh meu deus')
+
+
+p1 = Pessoa('Marco', 18, 1.65, 58)
+p2 = Pessoa('Marco', 18, 1.65, 58)
+
+p2.bracos = 1
+
+p2.quantos()
+
+print(p1.bracos)
+print(p2.bracos)
