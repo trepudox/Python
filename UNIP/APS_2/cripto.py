@@ -35,16 +35,16 @@ while True:
     if chave_correta:
         # entrada do usuário
         nome_arquivo = input('\nA mensagem será guardada em um arquivo texto. Digite o nome desse arquivo: ').lower()
-        entrada = input('Agora, digite a mensagem a ser criptografada: ')
+        entrada_mensagem = input('Agora, digite a mensagem a ser criptografada: ')
         # verificação de quantos caracteres há na mensagem
-        if len(entrada) > 128:
+        if len(entrada_mensagem) > 128:
             print('\nMensagem não pode conter mais que 128 caracteres.')
             break
 
         # conta da raíz de delta, o número é usado para alterar os caracteres
         raiz = sqrt(delta)
         # função para criptografar a mensagem
-        mensagem_criptografada = codifica(entrada, (int(raiz - 5)) * 100)
+        mensagem_criptografada = codifica(entrada_mensagem, (int(raiz - 5)) * 100)
 
         print('\nA mensagem criptografada é a seguinte:\n' + mensagem_criptografada)
 
