@@ -1,49 +1,38 @@
-from math import sqrt
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def correr(self):
+        print(f'O {self.__class__.__name__}', self.nome, 'agora está correndo')
 
 
-def codifica(mensagem, num):
-    cripto = ''
-    for char in mensagem:
-        cripto += chr(ord(char) + num)
-    return cripto
+class Aluno(Pessoa):
+    def estudar(self):
+        print(self.nome, 'está estudando')
 
 
-print('\nPrograma de criptografia, insira corretamente a chave, o nome do arquivo onde a mensagem será guardada, e '
-      'depois uma mensagem, para que ela seja criptografada. \nA mensagem não pode conter mais que 128 caracteres',
-      end='\n\n')
-while True:
-    try:
-        a = input('Digite a chave A: ')  # 0
-        b = input('Digite a chave B: ')  # 9
-        c = input('Digite a chave C: ')  # 0
-        d = input('Digite a chave D: ')  # 0
-        e = input('Digite a chave E: ')  # 0
-        a, b, c, d, e = int(a), int(b), int(c), int(d), int(e)
-    except ValueError:
-        print('\nChave incorreta.')
-        break
+class Cliente(Pessoa):
+    def comprar(self):
+        print(self.nome, 'está comprando')
 
-    delta = (((-b) ** 2 - 4 * a * c) + d) + e
-    chave_correta = delta == 81
 
-    if chave_correta:
-        nome_arquivo = input('\nA mensagem será guardada em um arquivo texto. Digite o nome desse arquivo: ').lower()
-        entrada = input('Agora, digite a mensagem a ser criptografada: ')
-        if len(entrada) > 128:
-            print('\nMensagem não pode conter mais que 128 caracteres.')
-            break
+class ClienteVIP(Cliente):
+    def __init__(self, nome, idade, idcliente):
+        super().__init__(nome, idade)
+        self.id = idcliente
 
-        raiz = sqrt(delta)
-        mensagem_criptografada = codifica(entrada, (int(raiz - 5)) * 100)
+    def atributos(self):
+        print(self.nome, self.idade, self.id)
 
-        print('\nA mensagem criptografada é a seguinte:\n' + mensagem_criptografada)
 
-        with open(f'{nome_arquivo}.txt', 'w', encoding='UTF-8') as arquivo_txt:
-            arquivo_txt.write(f'{mensagem_criptografada}')
-        break
+if __name__ == '__main__':
+    a1 = Aluno('Marco', 19)
+    a1.correr()
 
-    else:
-        print('\nChave incorreta.')
-        break
+    cvip1 = ClienteVIP('Marco', 18, 1)
 
-print('\nFim do programa.')
+    cvip1.comprar()
+
+    cvip1.atributos()
+

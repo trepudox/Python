@@ -1,11 +1,11 @@
 class Gato:
-    def __init__(self, cor, tamanho, nome='Gato', comendo=False, bebendo=False, ronronando=False):
+    def __init__(self, cor, tamanho, nome='Gato'):
         self.cor = cor
         self.tamanho = tamanho
         self.nome = nome
-        self.comendo = comendo
-        self.bebendo = bebendo
-        self.ronronando = ronronando
+        self.comendo = False
+        self.bebendo = False
+        self.ronronando = False
 
     def miar(self):
         if self.comendo:
@@ -74,4 +74,4 @@ if __name__ == '__main__':
 
     gato1.beber()
 
-print('\nFim do programa.')
+    print('\nFim do programa.')
