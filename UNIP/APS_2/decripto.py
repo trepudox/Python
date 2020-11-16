@@ -52,7 +52,7 @@ while True:
             # abre o arquivo em UTF-8 e modo de leitura. Caso o arquivo não exista, o programa para e avisa o usuário
             with open(f'{entrada_arquivo}.txt', 'r', encoding='UTF-8') as arquivo_txt:
                 leitura = arquivo_txt.read()
-        except FileNotFoundError:
+        except (FileNotFoundError, OSError):
             print('\nO arquivo de texto não existe!')
             break
 

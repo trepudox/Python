@@ -16,3 +16,11 @@ else:
     else:
         print('Aluno reprovado')
         print('Média final: {:.2f}'.format(media_final))
+
+# Os resultados foram como o esperado, o programa consegue criptografar uma mensagem, guardá-la em um novo arquivo
+# texto, criado através do programa, e também consegue descriptografá-la através deste mesmo arquivo .txt. Usamos
+# tratamentos de exceções, para que o programa não desse erro em momento algum, até mesmo quando o arquivo texto que
+# fora requisitado não estava presnte no mesmo diretório que programa decripto.py. Tiramos prints do funcionamento do
+# programa com os dados inseridos no teste de mesa e tudo saiu como os conformes, o programa criptografa de A até Z,
+# criptografa números e até símbolos. Usamos todas as ferramentas que nos foram disponibilizadas nas aulas de IPE,
+# tanto teoria quanto laboratório, foram aulas muito claras que ocasionaram em um código eficiente e sem erros.

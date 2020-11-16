@@ -46,13 +46,16 @@ while True:
         # função para criptografar a mensagem
         mensagem_criptografada = codifica(entrada_mensagem, (int(raiz - 5)) * 100)
 
-        print('\nA mensagem criptografada é a seguinte:\n' + mensagem_criptografada)
-
         # cria ou abre o arquivo em UTF-8 e modo de escrita, salvando a mensagem e sobrescrevendo qualquer dado
-        # que estivesse já estivesse escrito
+        # que estivesse já estivesse escrito, caso o nome seja inválido, um erro será lançado
+        try:
+            with open(f'{nome_arquivo}.txt', 'w', encoding='UTF-8') as arquivo_txt:
+                arquivo_txt.write(f'{mensagem_criptografada}')
+        except OSError:
+            print('\nO nome do arquivo não pode ser esse.')
+            break
 
-        with open(f'{nome_arquivo}.txt', 'w', encoding='UTF-8') as arquivo_txt:
-            arquivo_txt.write(f'{mensagem_criptografada}')
+        print('\nA mensagem criptografada é a seguinte:\n' + mensagem_criptografada)
         break
 
     # caso as chaves A, B e C sejam números inteiros, porém delta não é igual a 81
@@ -62,7 +65,3 @@ while True:
 
 print('\nFim do programa.')
 sleep(7.5)
-
-
-# !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ // 32 ao 125
-# áâãäåæçèéêëìíîïðñòóôõö÷øùúû // 225 ao 252

@@ -1,25 +1,16 @@
-<<<<<<< HEAD
 from math import sqrt
 
-erro = False
+
+def codifica(mensagem, num):
+    cripto = ''
+    for char in mensagem:
+        cripto += chr(ord(char) + num)
+    return cripto
 
 
-def decodifica(criptografada, num):
-    global erro
-    descripto = ''
-    for char in criptografada:
-        try:
-            descripto += chr(ord(char) - num)
-        except ValueError:
-            print('\nHá elementos não criptografados na mensagem. Impossível descriptografar.')
-            erro = True
-            return
-    return descripto
-
-
-print("\nPrograma de descriptografia, insira corretamente a chave e depois o nome do arquivo texto, que tenha uma "
-      "mensagem criptografada pelo programa 'cripto'.\n(O arquivo texto precisa estar no mesmo diretório deste programa"
-      " para que tudo funcione corretamente)", end='\n\n')
+print('\nPrograma de criptografia, insira corretamente a chave, o nome do arquivo onde a mensagem será guardada, e '
+      'depois uma mensagem, para que ela seja criptografada. \nA mensagem não pode conter mais que 128 caracteres',
+      end='\n\n')
 while True:
     try:
         a = input('Digite a chave A: ')  # 0
@@ -36,22 +27,19 @@ while True:
     chave_correta = delta == 81
 
     if chave_correta:
-        entrada_arquivo = input('\nDigite o nome do arquivo a ser descriptografado: ').lower()
-        try:
-            with open(f'{entrada_arquivo}.txt', 'r', encoding='UTF-8') as arquivo_txt:
-                leitura = arquivo_txt.read()
-        except FileNotFoundError:
-            print('\nO arquivo de texto não existe!')
+        nome_arquivo = input('\nA mensagem será guardada em um arquivo texto. Digite o nome desse arquivo: ').lower()
+        entrada = input('Agora, digite a mensagem a ser criptografada: ')
+        if len(entrada) > 128:
+            print('\nMensagem não pode conter mais que 128 caracteres.')
             break
 
-        raiz = int(sqrt(delta))
+        raiz = sqrt(delta)
+        mensagem_criptografada = codifica(entrada, (int(raiz - 5)) * 100)
 
-        mensagem_descriptografada = decodifica(leitura, (int(raiz) - 5) * 100)
+        print('\nA mensagem criptografada é a seguinte:\n' + mensagem_criptografada)
 
-        if erro:
-            break
-
-        print('\nA mensagem descriptografada é a seguinte:\n' + mensagem_descriptografada)
+        with open(f'{nome_arquivo}.txt', 'w', encoding='UTF-8') as arquivo_txt:
+            arquivo_txt.write(f'{mensagem_criptografada}')
         break
 
     else:
@@ -59,18 +47,3 @@ while True:
         break
 
 print('\nFim do programa.')
-=======
-class Pessoa:
-    def __init__(self, nome, idade):
-        self.nome = nome
-        self.idade = idade
-
-    def chamar(self, pessoa):
-        print(self.nome + ' chamou ' + pessoa.nome)
-
-
-p1 = Pessoa('Marco', 18)
-p2 = Pessoa('Albert', 20)
-
-p1.chamar(p2)
->>>>>>> 1e9c93836a5cfb4c92e2df560ea4f1b6b4149b64
