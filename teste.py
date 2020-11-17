@@ -1,25 +1,20 @@
-class Pessoa:
-    def __init__(self, nome, idade, altura, peso):
-        self.nome = nome
-        self.idade = idade
-        self.altura = altura
-        self.peso = peso
+class Eletronico:
+    def __init__(self, nome):
+        self._nome = nome
+        self._ligado = False
 
-    bracos = 2
-    pernas = 2
-    maos = 2
+    def ligar(self):
+        if self._ligado:
+            print(f'{self._nome} já está ligado.')
+        else:
+            self._ligado = True
+            print(f'{self._nome} agora está ligado.')
 
-    def quantos(self):
-        if self.bracos != 2:
-            print('oh meu deus')
+    def desligar(self):
+        if self._ligado:
+            self._ligado = False
+            print(f'{self._nome} agora está desligado.')
+        else:
+            print(f'{self._nome} já está desligado.')
 
-
-p1 = Pessoa('Marco', 18, 1.65, 58)
-p2 = Pessoa('Marco', 18, 1.65, 58)
-
-p2.bracos = 1
-
-p2.quantos()
-
-print(p1.bracos)
-print(p2.bracos)
+            
