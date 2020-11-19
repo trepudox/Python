@@ -3,7 +3,7 @@ No Python, o comportamento dos operadores é definido por métodos especiais.
 Vamos alterar o comportamento de operadores com classes definidas pelo usuário.
 
 Operador    Método          Operação
-------------------------------------------------------
+--------------------------------------------------------
 +           __add__         adição
 -           __sub__         subtração
 *           __mul__         multiplicação
@@ -25,4 +25,9 @@ Operador    Método          Operação
 |           __or__          OU bit-a-bit
 ^           __xor__         OU exclusivo bit-a-bit
 ~           __inv__         inversão
+--------------------------------------------------------
+
+LINK PARA MÉTODOS MÁGICOS:
+https://rszalski.github.io/magicmethods/
+
 """
