@@ -12,6 +12,10 @@ class Eletronico(ABC):
         self._ligado = False
         self._sembateria = False
 
+    @abstractmethod
+    def __add__(self, other):
+        pass
+
     def ligar(self):
         if self._ligado:
             print(f'{self._nome} já está ligado.')
@@ -60,6 +64,9 @@ class Celular(Eletronico):
         self._armazenamento = armazenamento
         self._memoria = memoria
 
+    def __add__(self, other):
+        return Celular()
+
     def fazer_ligacao(self):
         if self._ligado:
             print(self._nome, 'está fazendo uma ligação.')
@@ -76,9 +83,12 @@ class Celular(Eletronico):
 
 
 class CelularSamsung(Celular):
-    def __init__(self, modelo, cor, armazenamento, memoria, __marca='Samsung'):
-        super().__init__(modelo, __marca, cor, armazenamento, memoria)
+    def __init__(self, modelo, cor, armazenamento, memoria, marca='Samsung'):
+        super().__init__(modelo, marca, cor, armazenamento, memoria)
         self._marca = 'Samsung'
+
+    def __add__(self, other):
+        return CelularSamsung(f'{self._nome} + {other._nome}', f'{self._nome} + {other._nome}', (self._armazenamento + other._armazenamento), (self._memoria + other._memoria))
 
 
 if __name__ == '__main__':
@@ -87,7 +97,13 @@ if __name__ == '__main__':
     cel1.fazer_ligacao()
 
     celSamsung1 = CelularSamsung('J8', 'Preto', 64, 4)
+    celSamsung2 = CelularSamsung('J1 Mini', 'Dourado', 8, 1)
 
     celSamsung1.especificacoes()
 
     celSamsung1.ligar()
+
+    celSamsung3 = CelularSamsung
+
+    celSamsung3 = celSamsung1 + celSamsung2
+    celSamsung3.especificacoes()
