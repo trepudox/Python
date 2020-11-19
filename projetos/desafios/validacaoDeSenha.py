@@ -1,5 +1,5 @@
 def forca_da_senha(upper, lower, numero, especial):
-    if upper >= 2 and lower >= 2 and numero >= 2 and especial >=2:
+    if upper >= 2 and lower >= 2 and numero >= 2 and especial >= 2:
         return 'Muito forte'
     elif upper >= 1 and lower >= 1 and numero >= 1 and especial >= 1:
         return 'Forte'
@@ -32,5 +32,5 @@ def validacao(senha_usuario):
 
     return f'Força da senha: {forca}'
 
-            
+
 print(validacao(input('Digite sua senha: ')))
