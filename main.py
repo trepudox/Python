@@ -1,4 +1,4 @@
-from codigosPython.teste import *
+from codigosPython.cola.POO2 import *
 
 ele1 = Eletronico('Celular')
 
