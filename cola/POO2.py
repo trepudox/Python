@@ -7,7 +7,7 @@ def pulalinha():
 
 class Eletronico(ABC):
     @abstractmethod
-    def __init__(self, nome):
+    def __init__(self, nome: str):
         self._nome = nome
         self._ligado = False
         self._sembateria = False
@@ -57,7 +57,7 @@ class Eletronico(ABC):
 
 
 class Celular(Eletronico):
-    def __init__(self, modelo, marca, cor, armazenamento, memoria):
+    def __init__(self, modelo: str, marca: str, cor: str, armazenamento: int, memoria: int):
         super().__init__(modelo)
         self._marca = marca
         self._cor = cor
@@ -107,3 +107,5 @@ if __name__ == '__main__':
 
     celSamsung3 = celSamsung1 + celSamsung2
     celSamsung3.especificacoes()
+
+    celSamsung4 = CelularSamsung('S20', 'Azul', 128, 6)
