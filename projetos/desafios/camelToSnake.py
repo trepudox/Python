@@ -19,6 +19,6 @@ def snake_to_camel(texto):
     return texto[0].lower() + texto[1:]
 
 
-texto = 'texto_em_snake_case'
+msg = 'texto_em_snake_case'
 
-print(snake_to_camel(texto))
+print(snake_to_camel(msg))
