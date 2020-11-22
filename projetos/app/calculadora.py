@@ -5,6 +5,8 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QWidget, QGr
 class App(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.setWindowTitle('Calculadora')
+        self.setFixedSize(300, 300)
         self.cw = QWidget()
         self.grid = QGridLayout(self.cw)
 
@@ -67,6 +69,7 @@ class App(QMainWindow):
         self.grid.addWidget(self.btnigual, 2, 4, 2, 2)
         self.grid.addWidget(self.btnC, 0, 4, 2, 2)
 
+    # funções
     def botao1(self):
         pass
 
