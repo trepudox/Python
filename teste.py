@@ -1,33 +1,72 @@
-from random import randint
+from abc import ABC, abstractmethod
 
-vidas = 10
-numero_aleatorio = randint(0, 100)
-print('Você tem que adivinhar um número aleatório entre 0 e 100, você tem 10 chances.')
-while vidas > 0:
-    try:
-        entrada = int(input('\nDigite um número de 0 a 100: '))
-        if entrada < 0 or entrada > 100:
-            raise ValueError
-    except ValueError:
-        print('\nValor tem que ser um número inteiro de 0 a 100.')
-        continue
 
-    if entrada == numero_aleatorio:
-        print('\nVocê ganhou!')
-        print(f'O número era {numero_aleatorio} e você ainda tinha {vidas} vidas.')
-        break
+def pula_linha():
+    print()
 
-    if entrada > numero_aleatorio:
-        print(f'Muito alto! O número é menor que {entrada}.')
-        vidas -= 1
-        print(f'Você ainda tem {vidas} vidas.')
-        continue
 
-    if entrada < numero_aleatorio:
-        print(f'Muito baixo... O número é maior que {entrada}.')
-        vidas -= 1
-        print(f'Você ainda tem {vidas} vidas.')
-else:
-    print(f'Você perdeu, suas vidas chegaram a 0.\nO número aleatório era {numero_aleatorio}.')
+class Pessoa(ABC):
+    @abstractmethod
+    def __init__(self, nome, idade):
+        self._nome = nome
+        self._idade = idade
 
-print('\nFim do jogo.')
+    @abstractmethod
+    def dados(self):
+        print('Nome:', self._nome)
+        print('Idade:', self._idade)
+
+
+class Paciente(Pessoa):
+    def __init__(self, nome, idade, id):
+        super().__init__(nome, idade)
+        self._id = id
+        self._estado = 'Normal'
+        self._internado = False
+        self._morto = False
+
+    def dados(self):
+        super().dados()
+        try:
+            print('Tipo sanguíneo:', self.sangue.tipo)
+        except AttributeError:
+            print('Tipo sanguíneo:', 'Ainda não registrado')
+        if self._morto:
+            print('Infelizmente morreu...')
+            pula_linha()
+            return
+        print('Internado:', self._internado)
+        pula_linha()
+
+    def morrer(self):
+        print(self._nome, 'morreu...')
+        self._morto = True
+        pula_linha()
+
+    def internar(self):
+        print(self._nome, 'está internado agora em estado', self._estado)
+        self._internado = True
+        pula_linha()
+
+
+class Sangue:
+    def __init__(self, tipo: str):
+        self.tipo = tipo.upper()
+
+    def tipo_sanguineo(self):
+        print('O tipo sanguíneo é', self.tipo)
+        pula_linha()
+
+
+if __name__ == '__main__':
+    paciente1 = Paciente('Marco', 18, 1)
+
+    paciente1.sangue = Sangue('o-')
+
+    paciente1.sangue.tipo_sanguineo()
+
+    paciente1.dados()
+
+    paciente1.morrer()
+
+    paciente1.dados()
