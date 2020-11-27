@@ -61,6 +61,8 @@ class Sangue:
 if __name__ == '__main__':
     paciente1 = Paciente('Marco', 18, 1)
 
+    paciente1.dados()
+
     paciente1.sangue = Sangue('o-')
 
     paciente1.sangue.tipo_sanguineo()
