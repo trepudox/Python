@@ -1,3 +1,5 @@
+# ficou confuso, refazer depois
+
 entrada = int(input('wentrada: '))
 cont = entrada - 1
 cont2 = 0
