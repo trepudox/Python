@@ -1,6 +1,6 @@
 # ficou confuso, refazer depois
 
-entrada = int(input('wentrada: '))
+entrada = int(input('digite o tamanho do diamante: '))
 cont = entrada - 1
 cont2 = 0
 cont3 = -1
