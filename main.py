@@ -2,6 +2,10 @@ lista = []
 condicao = True
 
 
+def pulalinha():
+    print()
+
+
 def add():
     try:
         nome = input('Nome: ')
@@ -10,7 +14,7 @@ def add():
     except ValueError:
         print('\nValor precisa ser um número\n')
 
-    print()
+    pulalinha()
 
 
 def rmv():
@@ -22,7 +26,7 @@ def rmv():
     except ValueError:
         print('\nApenas números são validos.')
 
-    print()
+    pulalinha()
 
 
 def ver():
@@ -31,7 +35,7 @@ def ver():
     print()
     for indice, item in enumerate(lista):
         print('Item', str(indice) + ':', item[0] + ',', item[1])
-    print()
+    pulalinha()
 
 
 def sair():
@@ -41,13 +45,13 @@ def sair():
 
 
 def com():
-    print()
+    pulalinha()
     print('"add" - adiciona itens na lista')
     print('"rmv" - remove itens da lista de acordo com a sua posição')
     print('"ver" - mostra a lista')
     print('"sair" - sai do programa')
     print('"com" - mostra os comandos')
-    print()
+    pulalinha()
 
 
 print('Digite "com" para ver os comandos.\n')
@@ -79,3 +83,4 @@ while condicao:
 with open('arquivo.txt', 'w') as arquivo:
     for indice, item in enumerate(lista):
         arquivo.write(f"Item {indice}: {item[0]}, {item[1]}")
+        
