@@ -83,4 +83,3 @@ while condicao:
 with open('arquivo.txt', 'w') as arquivo:
     for indice, item in enumerate(lista):
         arquivo.write(f"Item {indice}: {item[0]}, {item[1]}")
-        
