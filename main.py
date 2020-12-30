@@ -1,22 +1,12 @@
-entrada = input()
-pontos = ['!', ',', '.', '?', ';', ':']
-for x in pontos:
-    entrada = entrada.replace(x, '')
+class Animal:
+    def __init__(self, raca, cor, nome):
+        self.raca = raca
+        self.cor = cor
+        self.nome = nome
 
-palavras = entrada.split(' ')
+    def latir(self):
+        print(self.nome + ' latiu.')
 
-soma = 0
-contador = 0
 
-for plv in palavras:
-    soma += len(str(plv))
-    contador += 1
-else:
-    media = soma / contador
-
-media_for_inteira = soma % contador == 0
-
-if media_for_inteira:
-    print(int(media))
-else:
-    print(int(media) + 1)
+cachorro = Animal('yorkshire', 'mesclado', 'dolfo')
+cachorro.latir()
