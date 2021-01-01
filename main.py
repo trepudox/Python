@@ -13,8 +13,14 @@ class Animal(ABC):
         self._dormindo = False
         self._comendo = False
         self._bebendo = False
+        self._morto = False
 
     def dormir(self):
+        if self._morto:
+            print('A ação não pode ser feita,', self._nome, 'está morto.')
+            pulalinha()
+            return
+
         if self._dormindo:
             print(self._nome, 'já está dormindo.')
             pulalinha()
@@ -33,6 +39,11 @@ class Animal(ABC):
         pulalinha()
 
     def comer(self):
+        if self._morto:
+            print('A ação não pode ser feita,', self._nome, 'está morto.')
+            pulalinha()
+            return
+
         if self._dormindo:
             print(self._nome, 'não pode comer dormindo.')
             pulalinha()
@@ -48,6 +59,11 @@ class Animal(ABC):
         pulalinha()
 
     def beber(self):
+        if self._morto:
+            pulalinha()
+            print('A ação não pode ser feita,', self._nome, 'está morto.')
+            return
+
         if self._dormindo:
             print(self._nome, 'não pode beber dormindo.')
             pulalinha()
@@ -63,6 +79,11 @@ class Animal(ABC):
         pulalinha()
 
     def parar(self):
+        if self._morto:
+            print('A ação não pode ser feita,', self._nome, 'está morto.')
+            pulalinha()
+            return
+
         if self._dormindo:
             print(self._nome, 'agora está acordado.')
             self._dormindo = False
@@ -89,6 +110,41 @@ class Cachorro(Animal):
         self._raca = raca
         self._porte = porte
         self._idade = idade
+        self._vidas = 3
+
+    def latir(self):
+        if self._morto:
+            print(self._nome, 'está morto.')
+            pulalinha()
+            return
+        print(self._nome, 'latiu.')
+        pulalinha()
+
+    def atacar(self, other):
+        if self._morto and other._morto:
+            print('A ação não pode ser feita,', self._nome, 'e', other._nome, 'estão mortos.')
+            pulalinha()
+            return
+
+        elif self._morto:
+            print('A ação não pode ser feita,', self._nome, 'está morto.')
+            pulalinha()
+            return
+
+        elif other._morto:
+            print('A ação não pode ser feita,', other._nome, 'está morto.')
+            pulalinha()
+            return
+
+        print(self._nome, f'atacou {other._nome}!')
+        other._vidas -= 1
+        if other._vidas >= 1:
+            print(other._nome, f'agora tem {other._vidas} vidas.')
+            pulalinha()
+        else:
+            print(other._nome, 'está sem vidas, portanto, morreu...')
+            pulalinha()
+            other._morto = True
 
 
 if __name__ == '__main__':
@@ -98,3 +154,8 @@ if __name__ == '__main__':
     cao1.parar()
     cao1.beber()
     cao1.dormir()
+    cao1.latir()
+    cao2 = Cachorro('Tarzan', 'Vira-Lata', 'Médio', 5)
+    cao2.atacar(cao1)
+    cao2.atacar(cao1)
+    cao2.atacar(cao1)
