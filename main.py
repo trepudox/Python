@@ -1,15 +1,6 @@
 entrada = input()
 
-entrada = entrada[::-1]
-res = ''
+cassino = entrada.replace('x', '')
 
-for char in entrada:
-    if char == ' ':
-        res += ' '
-        continue
-    elif not char.isalpha():
-        res += ''
-    else:
-        res += char
-else:
-    print(res)
+print(cassino)
+

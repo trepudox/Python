@@ -1,4 +1,5 @@
-
+.idea/
+venv/
 .idea/codigosPython.iml
 .idea/misc.xml
 venv/bin/activate
