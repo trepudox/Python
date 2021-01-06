@@ -2,7 +2,7 @@ string = [1, 2, 3, 4, 5, 6456, 12324, 7543]
 
 print('teste')
 print('alteração na main')
-
+testeteste
 print('teste2')
 
 for x in string:
