@@ -2,6 +2,8 @@ string = [1, 2, 3, 4, 5, 6456, 12324, 7543]
 
 print('teste')
 
+print('teste2')
+
 for x in string:
     print(chr(x))
     if x > 1000:
