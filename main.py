@@ -1,15 +1,9 @@
-string = [1, 2, 3, 4, 5, 6456, 12324, 7543]
+entrada = input("Texto de entrada ->")
+contador = 0
+letra = "a"
 
-print('teste')
-print('alteração na main')
-
-print('teste2')
-
-for x in string:
-    print(chr(x))
-    if x > 1000:
-        print(1001)
-        for y in range(1, 1002):
-            print(y)
-
-        break
+for x in entrada:
+    if x == letra:
+        contador += 1
+else:
+    print(f"A letra '{letra}' estava {contador} vezes na frase.")
