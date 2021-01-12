@@ -26,7 +26,6 @@ try:
 except IndexError:
     print()
 
-
 print(entrada)
 
 print(saida)
