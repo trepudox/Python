@@ -31,5 +31,7 @@ print(entrada)
 
 print(saida)
 
-print(final)
 
+lista = [x**2 for x in range(1, 10) if x % 2 == 1]
+
+print(lista)
